@@ -1,10 +1,9 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {getTrendingMovies} from "api/Movie-api";
-import { useState } from "react";
 
 export default function Home() {
-
+    const location = useLocation();
     const [trendingMovies, setTrendingMovies] = useState([]);
     
     
@@ -19,12 +18,12 @@ export default function Home() {
     return (
         <div>
             <h1> Trending today </h1>
-            <ul>
+            <ul className="search-list">
                 {trendingMovies.map(movie => (
-                    <li key={movie.id}>
-                        <Link to={`movies/${movie.id}`}>{movie.original_title}</Link>
-                    </li>
-                    
+                    (movie.title !== undefined)  &&
+                        <li className="search-list-item" key={movie.id}>
+                            <Link to={`movies/${movie.id}`} state={{ from: location }}>{movie.original_title}</Link>
+                        </li>
                 ))}
             </ul>
         </div>

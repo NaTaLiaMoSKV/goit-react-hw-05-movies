@@ -1,11 +1,11 @@
-import Searchbar from "components/Searchbar";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link, useLocation } from "react-router-dom";
 import { getMovieByTitle } from "api/Movie-api";
-import { Link } from "react-router-dom";
+import Searchbar from "components/searchbar/Searchbar";
 
 export default function Movies() {
     const [searchParams, setSearchParams] = useSearchParams();
+    const location = useLocation();
     const movieName = searchParams.get("query") ?? "";
     const [movies, setMovies] = useState([]);
     
@@ -19,18 +19,20 @@ export default function Movies() {
         getMovieByTitle(movieName)
             .then(movies => {
                 setMovies(movies.results);
-                console.log(movies.results);
         })
     }, [movieName]);
 
     return (
         <div>
             <Searchbar changeQueryString={updateQueryString} />
-            {movies.map(movie => 
-                <li key={movie.id}>
-                    <Link to={`${movie.id}`}>{movie.original_title}</Link>
-                </li>
-            )}
+            <ul className="search-list">
+                {movies.map(movie => 
+                    <li className="search-list-item" key={movie.id}>
+                        <Link to={`${movie.id}`} state={{ from: location }} >{movie.original_title}</Link>
+                    </li>
+                )}
+            </ul>
+            
         </div>
     );
 }

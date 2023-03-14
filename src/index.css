@@ -13,3 +13,142 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* ul{
+  list-style-type: none;
+} */
+
+p, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+ /* HEADER */
+
+header {
+  padding: 20px;
+  box-shadow: 0 4px 5px -3px gray;
+  margin-bottom: 10px;
+}
+
+.loading {
+  font-size: 22px;
+  font-weight: 700;
+  margin-left: 20px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style-type: none;
+}
+
+/* HOME PAGE */
+ h1 {
+  margin: 20px;
+ }
+
+.search-list-item {
+  margin-bottom: 7px;
+}
+
+/* SEARCHBAR */
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+.searchForm-input {
+  width: 200px;
+  height: 27px;
+  font-size: 16px;
+  border: 1px solid black;
+}
+
+.searchForm-button {
+  width: 70px;
+  height: 30px;
+}
+
+.searchForm-button-label {
+  font-style: 18px;
+}
+
+/* MOVIE CARD */
+
+.back-button {
+  width: 70px;
+  height: 30px;
+  margin-left: 15px;
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+
+  transition: background-color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.back-button:hover, 
+.back-button:focus {
+  background-color: lightgray;
+}
+
+.back-link {
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+.movieCard {
+  padding: 20px;
+  display: flex;
+  box-shadow: 0 4px 5px -3px gray;
+}
+
+.movieCard-image {
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.movieCard-info p,
+.movieCard-info h2,
+.movieCard-info h3,
+.movieCard-info h4 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* ADDITIONAL INFORMATION */
+
+.addInfo {
+  padding: 20px;
+  box-shadow: 0 4px 5px -3px gray;
+}
+
+.addInfo-text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.addInfo-item {
+  margin-bottom: 7px;
+  font-size: 17px;
+}
+
+/* CAST AND REVIEWS */
+.cast-list, 
+.reviews-list {
+  margin: 20px 15px;
+  /* padding: 0; */
+}
+
+.cast-item,
+.reviews-item {
+  margin-bottom: 30px;
+}
+
+.cast-name,
+.cast-character,
+.reviews-author,
+.reviews-content {
+  margin-top: 10px;
+}

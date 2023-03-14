@@ -15,7 +15,7 @@ export default function Searchbar({ changeQueryString }) {
     }
 
      return (
-        <header className="searchbar">
+        <div className="searchbar">
              <form className="searchForm" onSubmit={onFormSubmit}>
                  
                 <input
@@ -30,6 +30,6 @@ export default function Searchbar({ changeQueryString }) {
                 <span className="searchForm-button-label">Search</span>
                 </button>
             </form>
-        </header>
+        </div>
     )
 }

@@ -15,14 +15,14 @@ export default function Reviews() {
         },
     [movieId])
     return (
-        <ul>
+        <ul className="reviews-list">
             {
                 reviews.length === 0
-                    ? <p>We don`t have any reviews for this movie</p>
+                    ? <p className="reviews-errorText">We don`t have any reviews for this movie</p>
                     : reviews.map(review => 
-                        <li key={review.id}>
-                            <p>Author: {review.author}</p>
-                            <p>{review.content}</p>
+                        <li className="reviews-item" key={review.id}>
+                            <p className="reviews-author">Author: {review.author}</p>
+                            <p className="reviews-content">{review.content}</p>
                         </li>
             )}
         </ul>
