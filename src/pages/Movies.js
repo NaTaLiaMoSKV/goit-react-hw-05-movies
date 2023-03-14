@@ -28,7 +28,7 @@ export default function Movies() {
             <Searchbar changeQueryString={updateQueryString} />
             {movies.map(movie => 
                 <li key={movie.id}>
-                    <Link to={`movies/${movie.id}`}>{movie.original_title}</Link>
+                    <Link to={`${movie.id}`}>{movie.original_title}</Link>
                 </li>
             )}
         </div>
