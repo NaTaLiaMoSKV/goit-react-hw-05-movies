@@ -27,7 +27,7 @@ export default function MovieDetails() {
         <>
             <button className="back-button"><Link to={backLinkHref} className="back-link"> go back </Link></button>
             <MovieCard movie={movie} genres={genres} />
-            <AddInfo />
+            <AddInfo backLinkHref={backLinkHref} />
         </>
     );
 }
