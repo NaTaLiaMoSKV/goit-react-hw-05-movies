@@ -4,7 +4,7 @@ import { getMovieCast } from "api/Movie-api";
 
 export default function Cast() {
     const { movieId } = useParams();
-     const [cast, setCast] = useState([]);
+    const [cast, setCast] = useState([]);
 
     useEffect(
         () => {
@@ -15,12 +15,15 @@ export default function Cast() {
     }, [movieId])
     return (
         <ul className="cast-list">
-            {cast.map(actor =>
-                <li className="cast-item" key={actor.id}>
-                    <img className="cast-image" src={`https://image.tmdb.org/t/p/original${actor.profile_path}`} alt={actor.original_name} width="100" />
-                    <p className="cast-name">{actor.original_name}</p>
-                    <p className="cast-character">Character: {actor.character}</p>
-                </li>
+            {
+                cast.length === 0
+                    ? <p className="reviews-errorText">We don`t any information about cast</p>
+                    :cast.map(actor =>
+                        <li className="cast-item" key={actor.id}>
+                            <img className="cast-image" src={`https://image.tmdb.org/t/p/original${actor.profile_path}`} alt={actor.original_name} width="100" />
+                            <p className="cast-name">{actor.original_name}</p>
+                            <p className="cast-character">Character: {actor.character}</p>
+                        </li>
             )}
         </ul>
     )
